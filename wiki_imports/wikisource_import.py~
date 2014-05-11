@@ -1,0 +1,7 @@
+# coding: utf-8
+import pywikibot
+enws = pywikibot.Site('en', 'wikisource')
+enws.login()
+WSPATH = 'Wikisource:WikiProject Academic Papers/OA-Signalling/'
+page = pywikibot.Page(enws, WSPATH+'Title')
+page.put('Text goes here')
