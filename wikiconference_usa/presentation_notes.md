@@ -47,11 +47,26 @@ Not absolutes, but setting scope of expectations for the parties involved
 
 ### Presenters / Facilitators
 
-* Get an understanding of 
+* Get an understanding of how the project is best communicated to Wiki-savvy _and_ general audiences.
+* Get updates about any existing projects that attendees know about, that we don't currently know.
+* Get feedback, both solicited and un-solicited from wiki-enthusiasts who attend WikiConference USA.
+    * Learn how to best respond to this feedback.
+    * Learn to incorporate this feedback into further plans, development, progress, etc.
+* Brainstorm ideas and overlap with other initiatives
+* Become comfortable opening doors to participate, as well as simply listening and benefiting from the contribution of participating in our session.
 
 ## Free-form Summary
 
-Start off by getting familiar with the attendees. Isn't clear who and how many are going to join, but we should anticipate being flexible and scoping our time to the people who are present. Very few attendees promotes 
+Start off by getting familiar with the attendees. Isn't clear who and how many are going to join, but we should anticipate being flexible and scoping our time to the people who are present. Very few attendees promotes a closer, informal discussion. Many attendees may promote having a larger, more formal presentation component, as well as potentially small-group discussion or hands-on components. Generally it's important for us to cater to the experience, interests, and needs of the attendees. They will be able to provide us early, invaluable feedback on our project&mdash;even if that feedback is a lack of clarity or comprehension (implying, for example, that we should focus on clarity going forward).
+
+Overall, we should situate our project in the narrative of improving references / citations on Wikipedia. We're all about improving the experience of editing, and supporting the various communities of Wikipedia and its sister projects to create deep, connected, and flexibly consumed resources. We have focused our project on minimal goals in order to make the case for various small improvements that may one day be expanded into more comprehensive workflows. Our presentation should include a narrative arch:
+
+* What's the problem?
+* What we did we try in the past?
+* What worked, what didn't?
+* What are the solutions we see now?
+* What does the future look like?
+* What do we do starting now?
 
 ## Outline
 
@@ -77,3 +92,21 @@ Start off by getting familiar with the attendees. Isn't clear who and how many a
             * PyWikiBot (python library)
             * XSLT (xml style templating)
             * JATS (NLM xml format)
+1. WikiProject Open Access
+    * Open Access generally
+    * Wikipedia, WikiProjects, and the goals of WikiProject Open Access
+    * Signalling OA-ness
+1. Problems
+1. Solutions
+    * Previous attempts
+        * Successes
+        * Failures
+    * Current solutions
+1. Opportunities
+    * How OA-signalling project provides partial solution, uses opportunities, and opens up opportunities.
+    * Other projects opening opportunties here.
+1. The Future
+    * Visions
+    * Longer-term roadmap for OA-signalling and WikiProject Open Access
+1. Next Steps
+    * How to participate / support
