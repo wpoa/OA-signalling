@@ -110,3 +110,5 @@ Overall, we should situate our project in the narrative of improving references 
     * Longer-term roadmap for OA-signalling and WikiProject Open Access
 1. Next Steps
     * How to participate / support
+1. Hands-on Component
+    * Time-permitted workshopping based on areas of interest, skill.
