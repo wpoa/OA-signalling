@@ -7,6 +7,8 @@ import os
 from subprocess import call
 import xml.etree.ElementTree as etree
 import pywikibot
+from collections import defaultdict
+from functools import wraps
 
 class journal_article():
     '''This class represents a journal article 
@@ -18,7 +20,18 @@ class journal_article():
             doi = doi_parts[1] 
         self.doi = doi
         self.dirs = dirs
+        #a phase is like, have we downloaded it, have we gotten the pmcid, uploaded the images etc.
+        self.phase = defaultdict(bool)
     
+    def phase_report(self, function):
+        @wraps(function)
+        def wrapper(*args, **kwargs):
+            function_name = function.__name__()
+            self.phase[function_name] = True
+            return function(*args, **kwargs)
+        return wrapper
+
+    @phase_report
     def get_pmcid(self):
         idpayload = {'ids' : self.doi, 'format': 'json'}
         idconverter = requests.get('http://www.pubmedcentral.nih.gov/utils/idconv/v1.0/', params=idpayload)
@@ -32,7 +45,8 @@ class journal_article():
             self.pmcid = record['pmcid']            
         except:
             raise ConversionError(message='cannot get pmcid',doi=self.doi)
-        
+
+    @phase_report    
     def get_targz(self):
         try:
             archivefile_payload = {'id' : self.pmcid}
@@ -53,6 +67,7 @@ class journal_article():
         except:
             raise ConversionError(message='could not get the tar.gz file from the pubmed', doi=self.doi)
 
+    @phase_report
     def extract_targz(self):
         try:
             directory_name, file_extension = self.complete_path_targz.split('.tar.gz')
@@ -62,6 +77,7 @@ class journal_article():
         except:
             raise ConversionError(message='trouble extracting the targz', doi=self.doi)
     
+    @phase_report
     def find_nxml(self):
         try:
             self.dirs.qualified_article_dir = os.path.join(self.dirs.data_dir, self.dirs.article_dir)
@@ -74,7 +90,8 @@ class journal_article():
             raise ce
         except:
             raise ConversionError(message='could not traverse the search dierctory for nxml files', doi=self.doi)
-    
+
+    @phase_report    
     def xslt_it(self):
         try:
             doi_file_name = self.doi + '.mw.xml'
@@ -96,18 +113,33 @@ class journal_article():
         except:
             raise ConversionError(message='something went wrong, probably munging the file structure', doi=self.doi)
     
-
+    @phase_report
     def get_mwtext_element(self):
         tree = etree.parse(self.mw_xml_file)
         root = tree.getroot()
         mwtext = root.find('mw:page/mw:revision/mw:text', namespaces={'mw':'http://www.mediawiki.org/xml/export-0.8/'})
         self.wikitext = mwtext.text
-        
+
+    @phase_report
+    def get_mwtitle_element(self):
+        tree = etree.parse(self.mw_xml_file)
+        root = tree.getroot()
+        mwtitle = root.find('mw:page/mw:title', namespaces={'mw':'http://www.mediawiki.org/xml/export-0.8/'})
+        self.title = mwtitle.text
+
+    @phase_report
     def push_to_wikisource(self):
-        page = pywikibot.Page(self.dirs.wikisource_site, self.dirs.wikisource_basepath + self.doi)
+        page = pywikibot.Page(self.dirs.wikisource_site, self.dirs.wikisource_basepath + self.title)
         comment = "Imported from [[doi:"+self.doi+"]] by recitationbot"
         page.put(newtext=self.wikitext, botflag=True, comment=comment)
-        
+        self.wiki_link = page.title(asLink=True)
+    
+    @phase_report
+    def push_redirect_wikisource(self):
+        page = pywikibot.Page(self.dirs.wikisource_site, self.dirs.wikisource_basepath + self.doi)
+        comment = "Making a redirect"
+        redirtext = '#REDIRECT [[' + self.dirs.wikisource_basepath + self.title +']]'
+        page.put(newtext=redirtext, botflag=True, comment=comment)
 
 class ConversionError(Exception):
     def __init__(self, message, doi):
