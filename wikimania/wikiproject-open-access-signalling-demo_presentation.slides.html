@@ -1,12 +1,44 @@
+
 <!DOCTYPE html>
 <html>
 <head>
 
 <meta charset="utf-8" />
-<title>Notebook</title>
+<meta http-equiv="X-UA-Compatible" content="chrome=1" />
+
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+<title>wikiproject-open-access-signalling-demo_presentation slides</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+<!-- General and theme style sheets -->
+<link rel="stylesheet" href="reveal.js/css/reveal.css">
+<link rel="stylesheet" href="reveal.js/css/theme/simple.css" id="theme">
+
+<!-- For syntax highlighting -->
+<link rel="stylesheet" href="reveal.js/lib/css/zenburn.css">
+
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'reveal.js/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+}
+
+</script>
+
+<!--[if lt IE 9]>
+<script src="reveal.js/lib/js/html5shiv.js"></script>
+<![endif]-->
+
+<!-- Get Font-awesome from cdn -->
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css">
 
 <style type="text/css">
     .clearfix{*zoom:1}.clearfix:before,.clearfix:after{display:table;content:"";line-height:0}
@@ -1618,63 +1650,76 @@ span#checkpoint_status,span#autosave_status{font-size:small}
 
 <style type="text/css">
 /* Overrides of notebook CSS for static HTML export */
-body {
-  overflow: visible;
-  padding: 8px;
+html {
+  overflow-y: auto;
 }
-
-div#notebook {
-  overflow: visible;
-  border-top: none;
+.reveal {
+  font-size: 160%;
 }
-
-@media print {
-  div.cell {
-    display: block;
-    page-break-inside: avoid;
-  } 
-  div.output_wrapper { 
-    display: block;
-    page-break-inside: avoid; 
-  }
-  div.output { 
-    display: block;
-    page-break-inside: avoid; 
-  }
+.reveal pre {
+  width: inherit;
+  padding: 0.4em;
+  margin: 0px;
+  font-family: monospace, sans-serif;
+  font-size: 80%;
+  box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+}
+.reveal section img {
+  border: 0px solid black;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0);
+}
+.reveal i {
+  font-style: normal;
+  font-family: FontAwesome;
+  font-size: 2em;
+}
+.reveal .slides {
+  text-align: left;
+}
+.reveal.fade {
+  opacity: 1;
+}
+.reveal .progress {
+  position: static;
+}
+div.input_area {
+  padding: 0.06em;
+}
+div.code_cell {
+  background-color: transparent;
+}
+div.prompt {
+  width: 11ex;
+  padding: 0.4em;
+  margin: 0px;
+  font-family: monospace, sans-serif;
+  font-size: 80%;
+  text-align: right;
+}
+div.output_area pre {
+  font-family: monospace, sans-serif;
+  font-size: 80%;
+}
+div.output_prompt {
+  /* 5px right shift to account for margin in parent container */
+  margin: 5px 5px 0 0;
+}
+.rendered_html p {
+  text-align: inherit;
 }
 </style>
 
 <!-- Custom stylesheet, it must be in the same directory as the html file -->
 <link rel="stylesheet" href="custom.css">
 
-<!-- Loading mathjax macro -->
-<!-- Load mathjax -->
-    <script src="https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
-    <!-- MathJax configuration -->
-    <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
-            processEscapes: true,
-            processEnvironments: true
-        },
-        // Center justify equations in code and markdown cells. Elsewhere
-        // we use CSS to left justify single line equations in code cells.
-        displayAlign: 'center',
-        "HTML-CSS": {
-            styles: {'.MathJax_Display': {"margin": 0}},
-            linebreaks: { automatic: true }
-        }
-    });
-    </script>
-    <!-- End of mathjax configuration -->
-
 </head>
-<body>
-  <div tabindex="-1" id="notebook" class="border-box-sizing">
-    <div class="container" id="notebook-container">
 
+<body>
+<div class="reveal">
+<div class="slides">
+<section>
+    <section>
+    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -1686,7 +1731,10 @@ div#notebook {
 </div>
 </div>
 </div>
-</div>
+</div></section>
+    </section><section>
+    <section>
+    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -1695,7 +1743,10 @@ div#notebook {
 <h1>Introductions</h1>
 </div>
 </div>
-</div>
+</div></section>
+    </section><section>
+    <section>
+    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -1718,7 +1769,8 @@ div#notebook {
 </ul>
 </div>
 </div>
-</div>
+</div><div style=display:none>
+    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -1755,6 +1807,10 @@ div#notebook {
 </div>
 </div>
 </div>
+    </div></section>
+    </section><section>
+    <section>
+    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -1766,7 +1822,10 @@ div#notebook {
 </div>
 </div>
 </div>
-</div>
+</div></section>
+    </section><section>
+    <section>
+    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -1778,7 +1837,10 @@ div#notebook {
 </div>
 </div>
 </div>
-</div>
+</div></section>
+    </section><section>
+    <section>
+    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -1787,7 +1849,10 @@ div#notebook {
 <h1>&quot;A fact is only as reliable as the ability to source that fact, and the ability to weigh carefully that source.&quot;<sup> <a href="https://meta.wikimedia.org/wiki/WikiScholar#Motivation">[1]</a></sup></h1>
 </div>
 </div>
-</div>
+</div></section>
+    </section><section>
+    <section>
+    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -1802,7 +1867,10 @@ div#notebook {
 </ol>
 </div>
 </div>
-</div>
+</div></section>
+    </section><section>
+    <section>
+    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -1813,7 +1881,8 @@ div#notebook {
 <h2 id="in-a-nutshell-">In a nutshell...</h2>
 </div>
 </div>
-</div>
+</div><aside class="notes">
+    
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
@@ -1854,6 +1923,10 @@ In&nbsp;[22]:
 </div>
 
 </div>
+    </aside></section>
+    </section><section>
+    <section>
+    
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
@@ -1893,7 +1966,10 @@ In&nbsp;[18]:
 </div>
 </div>
 
-</div>
+</div></section>
+    </section><section>
+    <section>
+    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -1903,7 +1979,10 @@ In&nbsp;[18]:
 <h2 id="-alice-s-adventure-in-wonderland-">(Alice&#39;s Adventure in Wonderland)</h2>
 </div>
 </div>
-</div>
+</div></section>
+    </section><section>
+    <section>
+    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -1913,7 +1992,10 @@ In&nbsp;[18]:
 <p><img src="images/malaria0.png" alt="A tale about recurring Malaria"></p>
 </div>
 </div>
-</div>
+</div></section>
+    </section><section>
+    <section>
+    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -1923,7 +2005,10 @@ In&nbsp;[18]:
 <p><img src="images/malaria1.png" alt="Many Citations"></p>
 </div>
 </div>
-</div>
+</div></section>
+    </section><section>
+    <section>
+    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -1933,7 +2018,10 @@ In&nbsp;[18]:
 <p><img src="images/malaria2.png" alt="White 2011"></p>
 </div>
 </div>
-</div>
+</div></section>
+    </section><section>
+    <section>
+    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -1946,7 +2034,10 @@ In&nbsp;[18]:
 </ul>
 </div>
 </div>
-</div>
+</div></section>
+    </section><section>
+    <section>
+    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -1959,7 +2050,10 @@ In&nbsp;[18]:
 </ul>
 </div>
 </div>
-</div>
+</div></section>
+    </section><section>
+    <section>
+    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -1972,7 +2066,10 @@ In&nbsp;[18]:
 </ul>
 </div>
 </div>
-</div>
+</div></section>
+    </section><section>
+    <section>
+    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -1985,7 +2082,10 @@ In&nbsp;[18]:
 </ul>
 </div>
 </div>
-</div>
+</div></section>
+    </section><section>
+    <section>
+    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -1998,7 +2098,10 @@ In&nbsp;[18]:
 </ul>
 </div>
 </div>
-</div>
+</div></section>
+    </section><section>
+    <section>
+    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -2011,7 +2114,10 @@ In&nbsp;[18]:
 <p><a href="https://en.wikiquote.org/wiki/Alice%27s_Adventures_in_Wonderland#Ch._1_-_Down_the_Rabbit-Hole">Wikiquote</a></p>
 </div>
 </div>
-</div>
+</div></section>
+    </section><section>
+    <section>
+    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -2024,7 +2130,10 @@ In&nbsp;[18]:
 </ul>
 </div>
 </div>
-</div>
+</div></section>
+    </section><section>
+    <section>
+    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -2037,7 +2146,10 @@ In&nbsp;[18]:
 </ul>
 </div>
 </div>
-</div>
+</div></section>
+    </section><section>
+    <section>
+    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -2050,7 +2162,10 @@ In&nbsp;[18]:
 </ul>
 </div>
 </div>
-</div>
+</div></section>
+    </section><section>
+    <section>
+    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -2063,7 +2178,10 @@ In&nbsp;[18]:
 </ul>
 </div>
 </div>
-</div>
+</div></section>
+    </section><section>
+    <section>
+    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -2078,7 +2196,10 @@ In&nbsp;[18]:
 </blockquote>
 </div>
 </div>
-</div>
+</div></section>
+    </section><section>
+    <section>
+    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -2093,7 +2214,10 @@ In&nbsp;[18]:
 </blockquote>
 </div>
 </div>
-</div>
+</div></section>
+    </section><section>
+    <section>
+    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -2106,7 +2230,10 @@ In&nbsp;[18]:
 </ul>
 </div>
 </div>
-</div>
+</div></section>
+    </section><section>
+    <section>
+    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -2118,7 +2245,10 @@ In&nbsp;[18]:
 </blockquote>
 </div>
 </div>
-</div>
+</div></section>
+    </section><section>
+    <section>
+    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -2131,7 +2261,10 @@ In&nbsp;[18]:
 </ul>
 </div>
 </div>
-</div>
+</div></section>
+    </section><section>
+    <section>
+    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -2144,7 +2277,10 @@ In&nbsp;[18]:
 </ul>
 </div>
 </div>
-</div>
+</div></section>
+    </section><section>
+    <section>
+    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -2156,7 +2292,10 @@ In&nbsp;[18]:
 </blockquote>
 </div>
 </div>
-</div>
+</div></section>
+    </section><section>
+    <section>
+    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -2169,7 +2308,10 @@ In&nbsp;[18]:
 </ul>
 </div>
 </div>
-</div>
+</div></section>
+    </section><section>
+    <section>
+    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -2182,7 +2324,10 @@ In&nbsp;[18]:
 </ul>
 </div>
 </div>
-</div>
+</div></section>
+    </section><section>
+    <section>
+    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -2196,7 +2341,10 @@ In&nbsp;[18]:
 </ul>
 </div>
 </div>
-</div>
+</div></section>
+    </section><section>
+    <section>
+    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -2222,7 +2370,10 @@ In&nbsp;[18]:
 </ul>
 </div>
 </div>
-</div>
+</div></section>
+    </section><section>
+    <section>
+    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -2236,7 +2387,10 @@ In&nbsp;[18]:
 </ul>
 </div>
 </div>
-</div>
+</div></section>
+    </section><section>
+    <section>
+    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -2251,7 +2405,8 @@ In&nbsp;[18]:
 </ul>
 </div>
 </div>
-</div>
+</div><div style=display:none>
+    
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
@@ -2326,7 +2481,65 @@ In&nbsp;[19]:
 </div>
 
 </div>
-    </div>
-  </div>
+    </div></section>
+    </section>
+</div>
+</div>
+
+<script src="reveal.js/lib/js/head.min.js"></script>
+
+<script src="reveal.js/js/reveal.js"></script>
+
+<script>
+
+// Full list of configuration options available here: https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+controls: true,
+progress: true,
+history: true,
+
+theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/none
+
+// Optional libraries used to extend on reveal.js
+dependencies: [
+{ src: "reveal.js/lib/js/classList.js", condition: function() { return !document.body.classList; } },
+{ src: "reveal.js/plugin/highlight/highlight.js", async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+{ src: "reveal.js/plugin/notes/notes.js", async: true, condition: function() { return !!document.body.classList; } }
+]
+});
+</script>
+
+<!-- Loading mathjax macro -->
+<!-- Load mathjax -->
+    <script src="https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+    <!-- MathJax configuration -->
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            processEscapes: true,
+            processEnvironments: true
+        },
+        // Center justify equations in code and markdown cells. Elsewhere
+        // we use CSS to left justify single line equations in code cells.
+        displayAlign: 'center',
+        "HTML-CSS": {
+            styles: {'.MathJax_Display': {"margin": 0}},
+            linebreaks: { automatic: true }
+        }
+    });
+    </script>
+    <!-- End of mathjax configuration -->
+
+<script>
+Reveal.addEventListener( 'slidechanged', function( event ) {
+  window.scrollTo(0,0);
+  MathJax.Hub.Rerender(event.currentSlide);
+});
+</script>
+
 </body>
+
 </html>
